@@ -9,6 +9,9 @@
 
     <title>TextUtils | An awesome text manipulation website</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      
+    </style>
   </head>
 
   <body>
@@ -20,24 +23,27 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+          <ul class="navbar-nav mr-0">
+            <li class="nav-item active pl-3 pr-3">
+              <a class="nav-link" href="">Home</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item active pl-3 pr-3">
               <a class="nav-link" href="./about">About Site</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item active pl-3 pr-3">
               <a class="nav-link" href="./services">Services</a>
             </li>
-          </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+            <li class="nav-item active pl-3 pr-3">
+              <a class="nav-link" href="https://codewithharry.com/">Website Idea</a>
+            </li>
+            <li class="nav-item active pl-3 pr-3">
+              <a class="nav-link" href="https://resume-ankit.herokuapp.com/">Developer</a>
+            </li>            
+          </ul>          
         </div>
       </nav>
+      
     </header>
     <br/><br/><br/>
 
@@ -53,42 +59,72 @@
             <textarea class="form-control" name='texttoutil' id="data" rows="7" cols='100'></textarea>
         </div>
         <p style='font-size:20px;'>Select action / service :</p>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="services" id="removePunc" value="removePunc" >
-            <label class="form-check-label" for="removePunc">
-                Remove Punctuation
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="services" id="removeSpaces" value="removeSpaces" >
-            <label class="form-check-label" for="removeSpaces">
-                Remove Extra Spaces
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="services" id="capitalize" value="capitalize" >
-            <label class="form-check-label" for="capitalize">
-                Capitalize Each Word
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="services" id="uppercase" value="uppercase" >
-            <label class="form-check-label" for="uppercase">
-                UPPERCASE
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="services" id="lowercase" value="lowercase" >
-            <label class="form-check-label" for="lowercase">
-                lowercase
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="services" id="newLineRemover" value="newLineRemover" >
-            <label class="form-check-label" for="newLineRemover">
-                New Line Remover
-            </label>
-        </div>
+        <table class="table">
+
+          <thead>
+            <tr>
+              <th scope="col">Service</th>
+              <th scope="col">Service</th>              
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="services" id="removePunc" value="removePunc" >
+              <label class="form-check-label" for="removePunc">
+                  Remove Punctuation
+              </label>
+            </div>
+            </td>
+            <td>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="services" id="removeSpaces" value="removeSpaces" >
+                <label class="form-check-label" for="removeSpaces">
+                    Remove Extra Spaces
+                </label>
+            </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="services" id="capitalize" value="capitalize" >
+              <label class="form-check-label" for="capitalize">
+                  Capitalize Each Word
+              </label>
+          </div>
+          </td>
+          <td>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="services" id="uppercase" value="uppercase" >
+              <label class="form-check-label" for="uppercase">
+                  UPPERCASE
+              </label>
+          </div>
+        </td>
+        </tr>
+
+        <tr>
+          <td>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="services" id="lowercase" value="lowercase" >
+              <label class="form-check-label" for="lowercase">
+                  lowercase
+              </label>
+          </div>
+          </td>
+          <td>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="services" id="newLineRemover" value="newLineRemover" >
+              <label class="form-check-label" for="newLineRemover">
+                  New Line Remover
+              </label>
+          </div>
+          </td></tr>
+        </tbody>
+        </table>
+
         <button type="submit" class="btn btn-success mt-3">Submit</button>
     </form>
     </main>
