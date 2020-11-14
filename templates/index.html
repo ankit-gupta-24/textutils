@@ -1,58 +1,10 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/favicon.ico">
-
-    <title>TextUtils | An awesome text manipulation website</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-      
-    </style>
-  </head>
-
-  <body>
-
-    <header>
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">TextUtils</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-          <ul class="navbar-nav mr-0">
-            <li class="nav-item active pl-3 pr-3">
-              <a class="nav-link" href="">Home</a>
-            </li>
-            <li class="nav-item active pl-3 pr-3">
-              <a class="nav-link" href="./about">About Site</a>
-            </li>
-            <li class="nav-item active pl-3 pr-3">
-              <a class="nav-link" href="./services">Services</a>
-            </li>
-            <li class="nav-item active pl-3 pr-3">
-              <a class="nav-link" href="https://codewithharry.com/">Website Idea</a>
-            </li>
-            <li class="nav-item active pl-3 pr-3">
-              <a class="nav-link" href="https://resume-ankit.herokuapp.com/">Developer</a>
-            </li>            
-          </ul>          
-        </div>
-      </nav>
-      
-    </header>
-    <br/><br/><br/>
-
-
+{% extends 'base.html' %}
+{% block content %}
     <!-- Begin page content -->
     <main role="main" class="container mb-5">
       <h1 class="mt-5 text-center">TextUtils !<br/> An awesome text manipulation website</h1>
 
-      <form class=' w-75 m-auto pt-5' method='post' action='analyze/'>
+      <form class=' w-75 m-auto pt-5 w-sm-95' method='post' action='analyze/'>
       {% csrf_token %}
         <div class="form-group">
             <label for="data" class='text-center' style='font-size:20px;'>Enter your text :</label>
@@ -122,6 +74,59 @@
               </label>
           </div>
           </td></tr>
+
+          <tr>
+            <td>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="services" id="wordCountWP" value="wordCountWP" >
+                <label class="form-check-label" for="wordCountWP">
+                    Word Count
+                </label>
+            </div>
+            </td>
+            <td>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="services" id="uniqueWC" value="uniqueWC" >
+                <label class="form-check-label" for="uniqueWC">
+                    Unique Word Count
+                </label>
+            </div>
+            </td></tr>
+
+            <tr>
+              <td>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="services" id="uniqueWord" value="uniqueWord" >
+                  <label class="form-check-label" for="uniqueWord">
+                      Unique Words 
+                  </label>
+              </div>
+              </td>
+              <td>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="services" id="freqCount" value="freqCount" >
+                  <label class="form-check-label" for="freqCount">
+                      Frequency of Each word
+                  </label>
+              </div>
+              </td></tr>
+              <tr>
+                <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="services" id="letterCount" value="letterCount" >
+                    <label class="form-check-label" for="letterCount">
+                        Unique Letters count 
+                    </label>
+                </div>
+                </td>
+                <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="services" id="uniqueLetter" value="uniqueLetter" >
+                    <label class="form-check-label" for="uniqueLetter">
+                        Unique letter
+                    </label>
+                </div>
+                </td></tr>
         </tbody>
         </table>
 
@@ -129,12 +134,5 @@
     </form>
     </main>
     
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
-</html>
+{% endblock %}
+ 
