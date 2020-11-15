@@ -2,7 +2,7 @@
 {% block content %}
     <!-- Begin page content -->
     <main role="main" class="container mb-5">
-      <h1 class="mt-5 text-center">TextUtils !<br/> An awesome text manipulation website</h1>
+      <h1 class="mt-5 text-center">TextUtils !<br/> <span id="typed"></span></h1>
 
       <form class=' w-75 m-auto pt-5 w-sm-95' method='post' action='analyze/'>
       {% csrf_token %}
@@ -20,113 +20,121 @@
             </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="services" id="removePunc" value="removePunc" >
-              <label class="form-check-label" for="removePunc">
-                  Remove Punctuation
-              </label>
-            </div>
-            </td>
-            <td>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="services" id="removeSpaces" value="removeSpaces" >
-                <label class="form-check-label" for="removeSpaces">
-                    Remove Extra Spaces
-                </label>
-            </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-          <div class="form-check">
-              <input class="form-check-input" type="radio" name="services" id="capitalize" value="capitalize" >
-              <label class="form-check-label" for="capitalize">
-                  Capitalize Each Word
-              </label>
-          </div>
-          </td>
-          <td>
-          <div class="form-check">
-              <input class="form-check-input" type="radio" name="services" id="uppercase" value="uppercase" >
-              <label class="form-check-label" for="uppercase">
-                  UPPERCASE
-              </label>
-          </div>
-        </td>
-        </tr>
-
-        <tr>
-          <td>
-          <div class="form-check">
-              <input class="form-check-input" type="radio" name="services" id="lowercase" value="lowercase" >
-              <label class="form-check-label" for="lowercase">
-                  lowercase
-              </label>
-          </div>
-          </td>
-          <td>
-          <div class="form-check">
-              <input class="form-check-input" type="radio" name="services" id="newLineRemover" value="newLineRemover" >
-              <label class="form-check-label" for="newLineRemover">
-                  New Line Remover
-              </label>
-          </div>
-          </td></tr>
-
-          <tr>
-            <td>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="services" id="wordCountWP" value="wordCountWP" >
-                <label class="form-check-label" for="wordCountWP">
-                    Word Count
-                </label>
-            </div>
-            </td>
-            <td>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="services" id="uniqueWC" value="uniqueWC" >
-                <label class="form-check-label" for="uniqueWC">
-                    Unique Word Count
-                </label>
-            </div>
-            </td></tr>
-
             <tr>
-              <td>
-              <div class="form-check">
-                  <input class="form-check-input" type="radio" name="services" id="uniqueWord" value="uniqueWord" >
-                  <label class="form-check-label" for="uniqueWord">
-                      Unique Words 
-                  </label>
-              </div>
-              </td>
-              <td>
-              <div class="form-check">
-                  <input class="form-check-input" type="radio" name="services" id="freqCount" value="freqCount" >
-                  <label class="form-check-label" for="freqCount">
-                      Frequency of Each word
-                  </label>
-              </div>
-              </td></tr>
-              <tr>
                 <td>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="services" id="letterCount" value="letterCount" >
-                    <label class="form-check-label" for="letterCount">
-                        Unique Letters count 
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="services" id="removePunc" value="removePunc" >
+                    <label class="form-check-label" for="removePunc">
+                        Remove Punctuation
                     </label>
-                </div>
+                    </div>
                 </td>
                 <td>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="services" id="uniqueLetter" value="uniqueLetter" >
-                    <label class="form-check-label" for="uniqueLetter">
-                        Unique letter
-                    </label>
-                </div>
-                </td></tr>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="services" id="removeSpaces" value="removeSpaces" >
+                        <label class="form-check-label" for="removeSpaces">
+                            Remove Extra Spaces
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="services" id="capitalize" value="capitalize" >
+                        <label class="form-check-label" for="capitalize">
+                            Capitalize Each Word
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="services" id="uppercase" value="uppercase" >
+                        <label class="form-check-label" for="uppercase">
+                            UPPERCASE
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="services" id="lowercase" value="lowercase" >
+                        <label class="form-check-label" for="lowercase">
+                            lowercase
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="services" id="newLineRemover" value="newLineRemover" >
+                        <label class="form-check-label" for="newLineRemover">
+                            New Line Remover
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="services" id="wordCountWP" value="wordCountWP" >
+                        <label class="form-check-label" for="wordCountWP">
+                            Word Count
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="services" id="uniqueWC" value="uniqueWC" >
+                        <label class="form-check-label" for="uniqueWC">
+                            Unique Word Count
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="services" id="uniqueWord" value="uniqueWord" >
+                        <label class="form-check-label" for="uniqueWord">
+                            Unique Words 
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="services" id="freqCount" value="freqCount" >
+                        <label class="form-check-label" for="freqCount">
+                            Frequency of Each word
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="services" id="letterCount" value="letterCount" >
+                        <label class="form-check-label" for="letterCount">
+                            Unique Letters count 
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="services" id="uniqueLetter" value="uniqueLetter" >
+                        <label class="form-check-label" for="uniqueLetter">
+                            Unique letter
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            
         </tbody>
         </table>
 
